@@ -64,12 +64,12 @@ public class BinaryTree {
 
     //The recursive method that does the actual traversal
     private void preorderRec(BinaryTreeNode node) {
-           
+         if (root != null)  {
    //Visit the node-Printing the node data    
       System.out.println(root.data);  
       preorderRec(root.left);  
       preorderRec(root.right);  
-     
+         }
   }  
 
         
@@ -88,15 +88,32 @@ public class BinaryTree {
 
     //The recursive method that does the actual traversal
     private void inorderRec(BinaryTreeNode node) {
-         
+         if (root != null){
       inorderRec(root.left);  
       System.out.println(root.data); 
       inorderRec(root.right);
     }
+    }
+    
+    public void postorderPrint() {
+    if (root != null)
+            
+            
+            postorderRec(root);
+        
+    }
+    
+    private void postorderRec(BinaryTreeNode node) {
+         if (root != null){
+      postorderRec(root.left);  
+      postorderRec(root.right);
+      System.out.println(root.data);
+    }
+    }
 
     //Uses a queue to do a breadth first traversal searching for value
-    public boolean search(int value) {
-    }
+   // public boolean search(int value) {
+   // }
 
 
 }

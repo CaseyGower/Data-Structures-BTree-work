@@ -55,20 +55,43 @@ public class BinaryTree {
     //The public method used to call the recursive traversal method
     public void preorderPrint() {
         if (root != null)
+            
+            
             preorderRec(root);
+        
     }
 
 
     //The recursive method that does the actual traversal
     private void preorderRec(BinaryTreeNode node) {
-    }
+           
+   //Visit the node-Printing the node data    
+      System.out.println(root.data);  
+      preorderRec(root.left);  
+      preorderRec(root.right);  
+     
+  }  
+
+        
+    
 
     //The public method used to call the recursive traversal method
     public void inorderPrint() {
+    if (root != null)
+            
+            
+            inorderRec(root);
+        
     }
+
+    
 
     //The recursive method that does the actual traversal
     private void inorderRec(BinaryTreeNode node) {
+         
+      inorderRec(root.left);  
+      System.out.println(root.data); 
+      inorderRec(root.right);
     }
 
     //Uses a queue to do a breadth first traversal searching for value

@@ -4,7 +4,6 @@
 
 
 //******* DO NOT ALTER THIS FILE ************
-package binarytree;
 
 public class BinaryTreeNode {
     //Package level protection on all fields to make using the nodes in the 

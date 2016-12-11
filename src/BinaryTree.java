@@ -114,9 +114,46 @@ public class BinaryTree {
     }
     }
 
-    //Use a queue to do a breadth first traversal searching for value
-   // public boolean search(int value) {
-   // }
+   // Use a queue to do a breadth first traversal searching for value
+ public boolean search(int value) {
+     
+    Boolean booleanValue = false;
+     
+     Queue<BinaryTreeNode> q = new LinkedList<>();
+     
+		if (root == null){
+                    booleanValue = false;
+			}
+		q.add(root);
+		while (!q.isEmpty()) {
+			BinaryTreeNode n = (BinaryTreeNode) q.remove();
+                        if (value == n.data){
+                            booleanValue = true;
+                            return booleanValue;
+                        }
+			
+			if (n.left != null)
+				q.add(n.left);
+			if (n.right != null)
+				q.add(n.right);
+		}
+                return booleanValue;
+         
+ }
 
+
+ class Node {
+	int data;
+	Node left;
+	Node right;
+
+	public Node(int data) {
+		this.data = data;
+		this.left = null;
+		this.right = null;
+	}
+        // help from gitHub:
+        // https://gist.githubusercontent.com/SumitJainUTD/e2d9e51ae2670e4a2c62/raw/07e1d6dd7aa2f1904333d475acf28b9ecfccdd93/BinaryTree_BFS.java
+}
 
 }
